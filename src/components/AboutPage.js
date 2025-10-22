@@ -73,7 +73,7 @@ const AboutPage = () => {
         <section className="about-hero">
           <div className="container">
             <div className="hero-content">
-              <h1 className="hero-title">About FoodHub</h1>
+              <h1 className="hero-title">About Chox kitchen</h1>
               <p className="hero-description">
                 We're passionate about creating exceptional dining experiences 
                 that bring people together through the love of great food.
@@ -89,7 +89,7 @@ const AboutPage = () => {
               <div className="story-text">
                 <h2 className="section-title">Our Story</h2>
                 <p className="story-paragraph">
-                  Founded in 2018, FoodHub began as a small family restaurant with a simple mission: 
+                  Founded in 2022, Chox kitchen began as a small family restaurant with a simple mission: 
                   to serve delicious, high-quality food made with love and care. What started as a 
                   humble kitchen has grown into a beloved dining destination that serves thousands 
                   of satisfied customers.

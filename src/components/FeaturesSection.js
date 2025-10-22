@@ -28,7 +28,7 @@ const FeaturesSection = () => {
     <section className="features-section" id="about">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Why Choose FoodHub?</h2>
+          <h2 className="section-title">Why Choose CHOX?</h2>
           <p className="section-description">
             We're committed to providing you with the best dining experience possible
           </p>

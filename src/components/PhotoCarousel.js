@@ -2,36 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const PhotoCarousel = () => {
   const photos = [
-    {
-      id: 1,
-      image: '🍕',
-      title: 'Authentic Italian Pizza',
-      description: 'Hand-tossed dough with fresh mozzarella and basil'
-    },
-    {
-      id: 2,
-      image: '🍔',
-      title: 'Gourmet Burgers',
-      description: 'Juicy beef patties with premium toppings and artisanal buns'
-    },
-    {
-      id: 3,
-      image: '🍜',
-      title: 'Asian Fusion',
-      description: 'Traditional recipes with modern culinary techniques'
-    },
-    {
-      id: 4,
-      image: '🥗',
-      title: 'Fresh Salads',
-      description: 'Crisp greens with seasonal vegetables and house dressings'
-    },
-    {
-      id: 5,
-      image: '🍰',
-      title: 'Decadent Desserts',
-      description: 'Sweet treats crafted by our pastry chefs'
-    }
+    { id: 1, image: '🍕', title: 'Authentic Italian Pizza', description: 'Hand-tossed dough with fresh mozzarella and basil' },
+    { id: 2, image: '🍔', title: 'Gourmet Burgers', description: 'Juicy beef patties with premium toppings and artisanal buns' },
+    { id: 3, image: '🍜', title: 'Asian Fusion', description: 'Traditional recipes with modern culinary techniques' },
+    { id: 4, image: '🥗', title: 'Fresh Salads', description: 'Crisp greens with seasonal vegetables and house dressings' },
+    { id: 5, image: '🍰', title: 'Decadent Desserts', description: 'Sweet treats crafted by our pastry chefs' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,8 +18,8 @@ const PhotoCarousel = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
         setIsTransitioning(false);
-      }, 300);
-    }, 3000);
+      }, 300); // Transition duration
+    }, 3000); // Slide duration
 
     return () => clearInterval(interval);
   }, [photos.length]);
@@ -60,55 +35,74 @@ const PhotoCarousel = () => {
   };
 
   return (
-    <section className="photo-carousel-section">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Our Signature Dishes</h2>
-          <p className="section-description">
+    // Replace gradient with solid color or textured background
+    <section className="py-16 md:py-24 bg-pink-500 relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Signature Dishes</h2>
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
             Discover our most popular and delicious creations
           </p>
         </div>
         
-        <div className="carousel-container">
-          <div className={`carousel-slide ${isTransitioning ? 'transitioning' : ''}`}>
-            <div className="slide-content">
-              <div className="slide-image">
-                <div className="food-emoji">{photos[currentIndex].image}</div>
+        <div className="relative max-w-3xl mx-auto">
+          {/* Carousel Slide */}
+          <div className={`bg-white rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-70 scale-95' : 'opacity-100 scale-100'}`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-center">
+                <div className="text-8xl md:text-9xl animate-bounce">{photos[currentIndex].image}</div>
               </div>
-              <div className="slide-info">
-                <h3 className="slide-title">{photos[currentIndex].title}</h3>
-                <p className="slide-description">{photos[currentIndex].description}</p>
-                <button className="btn-primary">Order This Dish</button>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{photos[currentIndex].title}</h3>
+                <p className="text-gray-600 mb-6">{photos[currentIndex].description}</p>
+                {/* Tailwind button */}
+                <button className="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-md hover:bg-indigo-700 transition duration-300 transform hover:-translate-y-1">
+                  Order This Dish
+                </button>
               </div>
             </div>
           </div>
           
-          <div className="carousel-indicators">
+          {/* Indicators */}
+          <div className="flex justify-center gap-3 mt-8">
             {photos.map((_, index) => (
               <button
                 key={index}
-                className={`indicator ${index === currentIndex ? 'active' : ''}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white scale-125' : 'bg-white bg-opacity-50'}`}
                 onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
           
-          <div className="carousel-navigation">
+          {/* Navigation */}
+          <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex justify-between px-4 md:-px-8 pointer-events-none">
             <button 
-              className="nav-btn prev-btn"
+              className="w-12 h-12 rounded-full bg-white bg-opacity-90 backdrop-blur-sm shadow-lg text-2xl text-gray-700 hover:bg-opacity-100 hover:scale-110 transition duration-300 pointer-events-auto flex items-center justify-center"
               onClick={() => goToSlide((currentIndex - 1 + photos.length) % photos.length)}
+              aria-label="Previous slide"
             >
-              ‹
+              &#8249; {/* Left arrow */}
             </button>
             <button 
-              className="nav-btn next-btn"
+              className="w-12 h-12 rounded-full bg-white bg-opacity-90 backdrop-blur-sm shadow-lg text-2xl text-gray-700 hover:bg-opacity-100 hover:scale-110 transition duration-300 pointer-events-auto flex items-center justify-center"
               onClick={() => goToSlide((currentIndex + 1) % photos.length)}
+              aria-label="Next slide"
             >
-              ›
+              &#8250; {/* Right arrow */}
             </button>
           </div>
         </div>
       </div>
+        {/* Add keyframes for animation if not already defined globally or via Tailwind config */}
+        <style>{`
+          @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+          }
+          .animate-bounce { animation: bounce 2s ease-in-out infinite; }
+        `}</style>
     </section>
   );
 };
