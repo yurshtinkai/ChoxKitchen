@@ -101,7 +101,7 @@ const HeroSection = () => {
               {/* Gold frame effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl blur opacity-30 animate-pulse"></div>
               <img
-                src="open.jpg"
+                src="logo.jpg"
                 alt="Delicious food served by CHOX Kitchen"
                 className="relative rounded-xl shadow-2xl max-w-full h-auto max-h-[500px] object-cover border-2 border-yellow-400/20"
               />
