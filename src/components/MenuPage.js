@@ -48,6 +48,10 @@ const MenuPage = () => {
     ? menuItems 
     : menuItems.filter(item => item.category === selectedCategory);
 
+  // Debug logging
+  console.log('Selected Category:', selectedCategory);
+  console.log('Filtered Items:', filteredItems);
+
   const addToCart = (item) => {
     setCart(prevCart => {
       const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
@@ -109,6 +113,15 @@ const MenuPage = () => {
         {/* Menu Items */}
         <section className="menu-items">
           <div className="container">
+            <div className="menu-header">
+              <h2 className="menu-section-title">
+                {selectedCategory === 'all' ? 'All Items' : 
+                 categories.find(cat => cat.id === selectedCategory)?.name}
+              </h2>
+              <p className="menu-count">
+                {filteredItems.length} {filteredItems.length === 1 ? 'item' : 'items'} found
+              </p>
+            </div>
             <div className="menu-grid">
               {filteredItems.map((item, index) => (
                 <div key={item.id} className="menu-card" style={{ animationDelay: `${index * 0.1}s` }}>
