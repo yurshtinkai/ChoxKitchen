@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 // 3D Marquee Background Component
 const ThreeDMarqueeBackground = () => {
   const foodImages = [
-    { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop&q=80', alt: 'Pizza' },
-    { src: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&h=600&fit=crop&q=80', alt: 'Burger' },
-    { src: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=80', alt: 'Pasta' },
-    { src: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=600&fit=crop&q=80', alt: 'Salad' },
-    { src: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=600&fit=crop&q=80', alt: 'Dessert' },
-    { src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=600&fit=crop&q=80', alt: 'Pancakes' },
-    { src: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800&h=600&fit=crop&q=80', alt: 'Sushi' },
-    { src: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&h=600&fit=crop&q=80', alt: 'Tacos' },
-    { src: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&h=600&fit=crop&q=80', alt: 'Steak' },
-    { src: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800&h=600&fit=crop&q=80', alt: 'Ramen' },
-    { src: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=600&fit=crop&q=80', alt: 'Cake' },
-    { src: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=600&fit=crop&q=80', alt: 'Sandwich' }
+    { src: '/1.jpg', alt: 'Caesar Salad' },
+    { src: '/2.jpg', alt: 'Buffalo Wings' },
+    { src: '/3.jpg', alt: 'Mozzarella Sticks' },
+    { src: '/4.jpg', alt: 'Bruschetta' },
+    { src: '/5.jpg', alt: 'Grilled Salmon' },
+    { src: '/6.jpg', alt: 'Beef Burger' },
+    { src: '/7.jpg', alt: 'Chicken Parmesan' },
+    { src: '/8.jpg', alt: 'Vegetarian Pasta' },
+    { src: '/1.jpg', alt: 'Caesar Salad' },
+    { src: '/2.jpg', alt: 'Buffalo Wings' },
+    { src: '/3.jpg', alt: 'Mozzarella Sticks' },
+    { src: '/4.jpg', alt: 'Bruschetta' }
   ];
 
   const duplicatedImages = [...foodImages, ...foodImages];
@@ -58,7 +58,14 @@ const ThreeDMarqueeBackground = () => {
                       width={800}
                       height={600}
                       className="aspect-[4/3] w-full max-w-[200px] rounded-xl object-cover ring-2 ring-white/10 shadow-2xl hover:shadow-white/20"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
                     />
+                    <div className="aspect-[4/3] w-full max-w-[200px] rounded-xl bg-gray-300 flex items-center justify-center text-4xl" style={{ display: 'none' }}>
+                      🍽️
+                    </div>
                   </div>
                 ))}
               </motion.div>
@@ -72,11 +79,14 @@ const ThreeDMarqueeBackground = () => {
 
 const PhotoCarousel = () => {
   const photos = [
-    { id: 1, image: '🍕', title: 'Authentic Italian Pizza', description: 'Hand-tossed dough with fresh mozzarella and basil' },
-    { id: 2, image: '🍔', title: 'Gourmet Burgers', description: 'Juicy beef patties with premium toppings and artisanal buns' },
-    { id: 3, image: '🍜', title: 'Asian Fusion', description: 'Traditional recipes with modern culinary techniques' },
-    { id: 4, image: '🥗', title: 'Fresh Salads', description: 'Crisp greens with seasonal vegetables and house dressings' },
-    { id: 5, image: '🍰', title: 'Decadent Desserts', description: 'Sweet treats crafted by our pastry chefs' }
+    { id: 1, image: '/1.jpg', title: 'Caesar Salad', description: 'Fresh romaine lettuce with parmesan cheese and croutons' },
+    { id: 2, image: '/2.jpg', title: 'Buffalo Wings', description: 'Spicy chicken wings with blue cheese dip' },
+    { id: 3, image: '/3.jpg', title: 'Mozzarella Sticks', description: 'Crispy breaded mozzarella with marinara sauce' },
+    { id: 4, image: '/4.jpg', title: 'Bruschetta', description: 'Toasted bread with fresh tomatoes and basil' },
+    { id: 5, image: '/5.jpg', title: 'Grilled Salmon', description: 'Fresh Atlantic salmon with lemon herb butter' },
+    { id: 6, image: '/6.jpg', title: 'Beef Burger', description: 'Juicy beef patty with lettuce, tomato, and special sauce' },
+    { id: 7, image: '/7.jpg', title: 'Chicken Parmesan', description: 'Breaded chicken breast with marinara and mozzarella' },
+    { id: 8, image: '/8.jpg', title: 'Vegetarian Pasta', description: 'Penne pasta with seasonal vegetables and olive oil' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -122,7 +132,20 @@ const PhotoCarousel = () => {
           <div className={`bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-70 scale-95' : 'opacity-100 scale-100'}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-center">
-                <div className="text-8xl md:text-9xl animate-bounce">{photos[currentIndex].image}</div>
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img
+                    src={photos[currentIndex].image}
+                    alt={photos[currentIndex].title}
+                    className="w-full h-64 md:h-80 object-cover transition-transform duration-500 hover:scale-105"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                  <div className="text-8xl md:text-9xl animate-bounce flex items-center justify-center h-64 md:h-80 bg-gray-100" style={{ display: 'none' }}>
+                    🍽️
+                  </div>
+                </div>
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">{photos[currentIndex].title}</h3>
