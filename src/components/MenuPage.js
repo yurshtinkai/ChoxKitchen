@@ -17,31 +17,31 @@ const MenuPage = () => {
 
   const menuItems = [
     // Appetizers
-    { id: 1, name: 'Caesar Salad', price: 8.99, category: 'appetizers', description: 'Fresh romaine lettuce with parmesan cheese and croutons', image: '🥗', popular: true },
-    { id: 2, name: 'Buffalo Wings', price: 12.99, category: 'appetizers', description: 'Spicy chicken wings with blue cheese dip', image: '🍗', popular: false },
-    { id: 3, name: 'Mozzarella Sticks', price: 9.99, category: 'appetizers', description: 'Crispy breaded mozzarella with marinara sauce', image: '🧀', popular: true },
-    { id: 4, name: 'Bruschetta', price: 7.99, category: 'appetizers', description: 'Toasted bread with fresh tomatoes and basil', image: '🍞', popular: false },
+    { id: 1, name: 'Caesar Salad', price: 8.99, category: 'appetizers', description: 'Fresh romaine lettuce with parmesan cheese and croutons', image: '/1.jpg', popular: true },
+    { id: 2, name: 'Buffalo Wings', price: 12.99, category: 'appetizers', description: 'Spicy chicken wings with blue cheese dip', image: '/2.jpg', popular: false },
+    { id: 3, name: 'Mozzarella Sticks', price: 9.99, category: 'appetizers', description: 'Crispy breaded mozzarella with marinara sauce', image: '/3.jpg', popular: true },
+    { id: 4, name: 'Bruschetta', price: 7.99, category: 'appetizers', description: 'Toasted bread with fresh tomatoes and basil', image: '/4.jpg', popular: false },
     
     // Main Courses
-    { id: 5, name: 'Grilled Salmon', price: 18.99, category: 'mains', description: 'Fresh Atlantic salmon with lemon herb butter', image: '🐟', popular: true },
-    { id: 6, name: 'Beef Burger', price: 14.99, category: 'mains', description: 'Juicy beef patty with lettuce, tomato, and special sauce', image: '🍔', popular: true },
-    { id: 7, name: 'Chicken Parmesan', price: 16.99, category: 'mains', description: 'Breaded chicken breast with marinara and mozzarella', image: '🍝', popular: false },
-    { id: 8, name: 'Vegetarian Pasta', price: 13.99, category: 'mains', description: 'Penne pasta with seasonal vegetables and olive oil', image: '🍝', popular: false },
-    { id: 9, name: 'Ribeye Steak', price: 24.99, category: 'mains', description: 'Premium ribeye steak cooked to perfection', image: '🥩', popular: true },
-    { id: 10, name: 'Fish & Chips', price: 15.99, category: 'mains', description: 'Beer-battered fish with crispy fries', image: '🐟', popular: false },
+    { id: 5, name: 'Grilled Salmon', price: 18.99, category: 'mains', description: 'Fresh Atlantic salmon with lemon herb butter', image: '/5.jpg', popular: true },
+    { id: 6, name: 'Beef Burger', price: 14.99, category: 'mains', description: 'Juicy beef patty with lettuce, tomato, and special sauce', image: '/6.jpg', popular: true },
+    { id: 7, name: 'Chicken Parmesan', price: 16.99, category: 'mains', description: 'Breaded chicken breast with marinara and mozzarella', image: '/7.jpg', popular: false },
+    { id: 8, name: 'Vegetarian Pasta', price: 13.99, category: 'mains', description: 'Penne pasta with seasonal vegetables and olive oil', image: '/8.jpg', popular: false },
+    { id: 9, name: 'Ribeye Steak', price: 24.99, category: 'mains', description: 'Premium ribeye steak cooked to perfection', image: '/1.jpg', popular: true },
+    { id: 10, name: 'Fish & Chips', price: 15.99, category: 'mains', description: 'Beer-battered fish with crispy fries', image: '/2.jpg', popular: false },
     
     // Desserts
-    { id: 11, name: 'Chocolate Cake', price: 6.99, category: 'desserts', description: 'Rich chocolate cake with vanilla ice cream', image: '🍰', popular: true },
-    { id: 12, name: 'Tiramisu', price: 7.99, category: 'desserts', description: 'Classic Italian dessert with coffee and mascarpone', image: '🍮', popular: true },
-    { id: 13, name: 'Ice Cream Sundae', price: 5.99, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '🍨', popular: false },
-    { id: 14, name: 'Cheesecake', price: 6.99, category: 'desserts', description: 'New York style cheesecake with berry compote', image: '🧀', popular: false },
+    { id: 11, name: 'Chocolate Cake', price: 6.99, category: 'desserts', description: 'Rich chocolate cake with vanilla ice cream', image: '/3.jpg', popular: true },
+    { id: 12, name: 'Tiramisu', price: 7.99, category: 'desserts', description: 'Classic Italian dessert with coffee and mascarpone', image: '/4.jpg', popular: true },
+    { id: 13, name: 'Ice Cream Sundae', price: 5.99, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '/5.jpg', popular: false },
+    { id: 14, name: 'Cheesecake', price: 6.99, category: 'desserts', description: 'New York style cheesecake with berry compote', image: '/6.jpg', popular: false },
     
     // Beverages
-    { id: 15, name: 'Fresh Orange Juice', price: 4.99, category: 'beverages', description: 'Freshly squeezed orange juice', image: '🍊', popular: false },
-    { id: 16, name: 'Premium Coffee', price: 3.99, category: 'beverages', description: 'Premium roasted coffee beans', image: '☕', popular: true },
-    { id: 17, name: 'Soft Drinks', price: 2.99, category: 'beverages', description: 'Coke, Pepsi, Sprite, or Fanta', image: '🥤', popular: false },
-    { id: 18, name: 'Craft Beer', price: 5.99, category: 'beverages', description: 'Local craft beer selection', image: '🍺', popular: true },
-    { id: 19, name: 'Wine Selection', price: 8.99, category: 'beverages', description: 'Curated wine selection by the glass', image: '🍷', popular: false }
+    { id: 15, name: 'Fresh Orange Juice', price: 4.99, category: 'beverages', description: 'Freshly squeezed orange juice', image: '/7.jpg', popular: false },
+    { id: 16, name: 'Premium Coffee', price: 3.99, category: 'beverages', description: 'Premium roasted coffee beans', image: '/8.jpg', popular: true },
+    { id: 17, name: 'Soft Drinks', price: 2.99, category: 'beverages', description: 'Coke, Pepsi, Sprite, or Fanta', image: '/1.jpg', popular: false },
+    { id: 18, name: 'Craft Beer', price: 5.99, category: 'beverages', description: 'Local craft beer selection', image: '/2.jpg', popular: true },
+    { id: 19, name: 'Wine Selection', price: 8.99, category: 'beverages', description: 'Curated wine selection by the glass', image: '/3.jpg', popular: false }
   ];
 
   const filteredItems = selectedCategory === 'all' 
@@ -114,7 +114,16 @@ const MenuPage = () => {
                 <div key={item.id} className="menu-card" style={{ animationDelay: `${index * 0.1}s` }}>
                   {item.popular && <div className="popular-badge">⭐ Popular</div>}
                   <div className="card-image">
-                    <div className="food-emoji">{item.image}</div>
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="food-image"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                      }}
+                    />
+                    <div className="food-emoji" style={{ display: 'none' }}>🍽️</div>
                   </div>
                   <div className="card-content">
                     <h3 className="item-name">{item.name}</h3>
