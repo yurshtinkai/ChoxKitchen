@@ -26,7 +26,7 @@ const Menu = ({ onAddToCart }) => {
     // Desserts
     { id: 8, name: 'Chocolate Cake', price: 6.99, category: 'desserts', description: 'Rich chocolate cake with vanilla ice cream', image: '/8.jpg' },
     { id: 9, name: 'Tiramisu', price: 7.99, category: 'desserts', description: 'Classic Italian dessert with coffee and mascarpone', image: '/1.jpg' },
-    { id: 10, name: 'Ice Cream Sundae', price: 5.99, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '/2.jpg' },
+    { id: 10, name: 'Chicken Katsu W/ Cucumber', price: 150, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '/2.jpg' },
     
     // Beverages
     { id: 11, name: 'Fresh Orange Juice', price: 4.99, category: 'beverages', description: 'Freshly squeezed orange juice', image: '/3.jpg' },
