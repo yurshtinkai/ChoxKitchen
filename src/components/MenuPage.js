@@ -33,7 +33,7 @@ const MenuPage = () => {
     // Desserts
     { id: 11, name: 'Chocolate Cake', price: 6.99, category: 'desserts', description: 'Rich chocolate cake with vanilla ice cream', image: '/3.jpg', popular: true },
     { id: 12, name: 'Tiramisu', price: 7.99, category: 'desserts', description: 'Classic Italian dessert with coffee and mascarpone', image: '/4.jpg', popular: true },
-    { id: 13, name: 'Ice Cream Sundae', price: 5.99, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '/5.jpg', popular: false },
+    { id: 13, name: 'Chicken Katsu W/ Cucumber', price: 150, category: 'desserts', description: 'Three scoops with your choice of toppings', image: '/5.jpg', popular: false },
     { id: 14, name: 'Cheesecake', price: 6.99, category: 'desserts', description: 'New York style cheesecake with berry compote', image: '/6.jpg', popular: false },
     
     // Beverages
